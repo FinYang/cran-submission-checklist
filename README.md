@@ -4,7 +4,9 @@
 # CRAN Submission Checklist
 
 This list mainly comes from the book R Packages and [R Packages
-(2e)](https://r-pkgs.org/). <!-- badges: start --> <!-- badges: end -->
+(2e)](https://r-pkgs.org/). <!-- badges: start -->
+
+<!-- badges: end -->
 
 # 1 Checks
 
@@ -29,8 +31,9 @@ usethis::use_github_action_check_standard()
 ## 1.3 R-hub
 
 ``` r
-devtools::check_rhub(interactive = FALSE)
+devtools::check_rhub()
 
+# If cpp
 rhub::check_with_sanitizers()
 ```
 
@@ -54,8 +57,8 @@ usethis::use_description()
 
 ### 2.1.1 Version
 
-    <major>.<minor>.<patch>       (released version)
-    <major>.<minor>.<patch>.<dev> (dev version)
+    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
+    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
 
 ### 2.1.2 License
 

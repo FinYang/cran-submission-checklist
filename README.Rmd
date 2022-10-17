@@ -2,6 +2,8 @@
 output: 
     github_document:
       number_sections: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -14,10 +16,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-# CRAN Submission Checklist {-}
+# CRAN Submission Checklist {.unnumbered}
 
-This list mainly comes from the book R Packages and [R Packages (2e)](https://r-pkgs.org/).
-<!-- badges: start -->
+This list mainly comes from the book R Packages and [R Packages (2e)](https://r-pkgs.org/). <!-- badges: start -->
+
 <!-- badges: end -->
 
 # Checks
@@ -25,7 +27,6 @@ This list mainly comes from the book R Packages and [R Packages (2e)](https://r-
 ```{r}
 usethis::proj_set(".")
 ```
-
 
 ## Local `R CMD check`
 
@@ -44,8 +45,9 @@ usethis::use_github_action_check_standard()
 ## R-hub
 
 ```{r}
-devtools::check_rhub(interactive = FALSE)
+devtools::check_rhub()
 
+# If cpp
 rhub::check_with_sanitizers()
 ```
 
@@ -57,29 +59,26 @@ devtools::check_win_release()
 devtools::check_win_oldrelease()
 ```
 
-
 ## [Reverse dependencies](https://r-pkgs.org/release.html#release-deps)
-
 
 # Before Submission
 
 ## DESCRIPTION
+
 ```{r}
 usethis::use_description()
 ```
-### Version 
 
-```
-<major>.<minor>.<patch>       (released version)
-<major>.<minor>.<patch>.<dev> (dev version)
-```
+### Version
 
+    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
+    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
 
-### License 
+### License
+
 ```{r}
 usethis::use_gpl3_license()
 ```
-
 
 ## README.md
 
@@ -88,15 +87,13 @@ usethis::use_readme_rmd()
 ```
 
 Badge?
+
 ```{r}
 usethis::use_cran_badge()
 ```
 
-```
-[![R-CMD-check](https://github.com/FinYang/fable.thrreg/workflows/R-CMD-check/badge.svg)](https://github.com/FinYang/fable.thrreg/actions)
-[![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-```
-
+    [![R-CMD-check](https://github.com/FinYang/fable.thrreg/workflows/R-CMD-check/badge.svg)](https://github.com/FinYang/fable.thrreg/actions)
+    [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ## NEWS.md
 
@@ -105,6 +102,7 @@ usethis::use_news_md()
 ```
 
 ## cran-comments.md
+
 ```{r}
 usethis::use_cran_comments()
 ```
@@ -114,7 +112,6 @@ usethis::use_cran_comments()
 ```{r}
 devtools::spell_check()
 ```
-
 
 ## SUBMIT!
 
@@ -126,23 +123,22 @@ devtools::release()
 
 ## Wait patiently
 
-If not, then https://r-hub.github.io/cransays/articles/dashboard.html
+If not, then <https://r-hub.github.io/cransays/articles/dashboard.html>
 
 ## Commit CRAN-SUBMISSION
 
 ## GitHub release
 
-* Release on Github with tag version v1.2.3
-* Copy NEWS to release notes.
+-   Release on Github with tag version v1.2.3
+-   Copy NEWS to release notes.
 
 ## Bump dev version
 
-* Delete CRAN-SUBMISSION
-* Bump to version .9000 in DESCRIPTION
-* Add a heading in NEWS
-* Commit
+-   Delete CRAN-SUBMISSION
+-   Bump to version .9000 in DESCRIPTION
+-   Add a heading in NEWS
+-   Commit
 
 ```{r}
 usethis::use_dev_version()
 ```
-
