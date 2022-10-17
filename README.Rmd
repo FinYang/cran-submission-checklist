@@ -1,0 +1,148 @@
+---
+output: 
+    github_document:
+      number_sections: yes
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  eval = FALSE
+)
+```
+
+# CRAN Submission Checklist {-}
+
+This list mainly comes from the book R Packages and [R Packages (2e)](https://r-pkgs.org/).
+<!-- badges: start -->
+<!-- badges: end -->
+
+# Checks
+
+```{r}
+usethis::proj_set(".")
+```
+
+
+## Local `R CMD check`
+
+```{r}
+devtools::check()
+```
+
+or press `Ctrl`/`Cmd` + `Shift` + `E`
+
+## Continuous Integration: GitHub Action
+
+```{r}
+usethis::use_github_action_check_standard()
+```
+
+## R-hub
+
+```{r}
+devtools::check_rhub(interactive = FALSE)
+
+rhub::check_with_sanitizers()
+```
+
+## Win-Builder
+
+```{r}
+devtools::check_win_devel()
+devtools::check_win_release()
+devtools::check_win_oldrelease()
+```
+
+
+## [Reverse dependencies](https://r-pkgs.org/release.html#release-deps)
+
+
+# Before Submission
+
+## DESCRIPTION
+```{r}
+usethis::use_description()
+```
+### Version 
+
+```
+<major>.<minor>.<patch>       (released version)
+<major>.<minor>.<patch>.<dev> (dev version)
+```
+
+
+### License 
+```{r}
+usethis::use_gpl3_license()
+```
+
+
+## README.md
+
+```{r}
+usethis::use_readme_rmd()
+```
+
+Badge?
+```{r}
+usethis::use_cran_badge()
+```
+
+```
+[![R-CMD-check](https://github.com/FinYang/fable.thrreg/workflows/R-CMD-check/badge.svg)](https://github.com/FinYang/fable.thrreg/actions)
+[![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+```
+
+
+## NEWS.md
+
+```{r}
+usethis::use_news_md()
+```
+
+## cran-comments.md
+```{r}
+usethis::use_cran_comments()
+```
+
+## Spelling
+
+```{r}
+devtools::spell_check()
+```
+
+
+## SUBMIT!
+
+```{r}
+devtools::release()
+```
+
+# After Submission
+
+## Wait patiently
+
+If not, then https://r-hub.github.io/cransays/articles/dashboard.html
+
+## Commit CRAN-SUBMISSION
+
+## GitHub release
+
+* Release on Github with tag version v1.2.3
+* Copy NEWS to release notes.
+
+## Bump dev version
+
+* Delete CRAN-SUBMISSION
+* Bump to version .9000 in DESCRIPTION
+* Add a heading in NEWS
+* Commit
+
+```{r}
+usethis::use_dev_version()
+```
+
