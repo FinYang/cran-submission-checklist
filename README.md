@@ -4,8 +4,9 @@
 # CRAN Submission Checklist
 
 This list mainly comes from the book R Packages and [R Packages
-(2e)](https://r-pkgs.org/). <!-- badges: start -->
+(2e)](https://r-pkgs.org/).
 
+<!-- badges: start -->
 <!-- badges: end -->
 
 # 1 Checks
@@ -57,7 +58,7 @@ usethis::use_description()
 
 ### 2.1.1 Version
 
-Don't push after this
+Don’t push after this
 
 ``` r
 usethis::use_version()
@@ -117,7 +118,7 @@ devtools::release()
 
 If not, then <https://r-hub.github.io/cransays/articles/dashboard.html>
 
-## 3.2 Push (Don't Commit CRAN-SUBMISSION)
+## 3.2 Push (Don’t Commit CRAN-SUBMISSION)
 
 ## 3.3 GitHub release
 
@@ -129,7 +130,6 @@ usethis::use_github_release()
 - Copy NEWS to release notes.
 - Delete CRAN-SUBMISSION
 
-
 ## 3.4 Bump dev version and Push
 
 ``` r
@@ -139,4 +139,3 @@ usethis::use_dev_version()
 - Bump to version .9000 in DESCRIPTION
 - Add a heading in NEWS
 - Commit
-
