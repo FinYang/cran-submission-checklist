@@ -71,16 +71,7 @@ devtools::check_win_oldrelease()
 usethis::use_description()
 ```
 
-### Version
 
-Don't push after this
-
-``` r
-usethis::use_version()
-```
-
-    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
-    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
 
 ### License
 
@@ -120,6 +111,17 @@ usethis::use_cran_comments()
 ```{r}
 devtools::spell_check()
 ```
+
+## Version
+
+Don't push after this
+
+``` r
+usethis::use_version()
+```
+
+    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
+    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
 
 ## SUBMIT!
 

@@ -56,18 +56,7 @@ devtools::check_win_oldrelease()
 usethis::use_description()
 ```
 
-### 2.1.1 Version
-
-Don’t push after this
-
-``` r
-usethis::use_version()
-```
-
-    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
-    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
-
-### 2.1.2 License
+### 2.1.1 License
 
 ``` r
 usethis::use_gpl3_license()
@@ -106,7 +95,18 @@ usethis::use_cran_comments()
 devtools::spell_check()
 ```
 
-## 2.6 SUBMIT!
+## 2.6 Version
+
+Don’t push after this
+
+``` r
+usethis::use_version()
+```
+
+    <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
+    <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
+
+## 2.7 SUBMIT!
 
 ``` r
 devtools::release()
