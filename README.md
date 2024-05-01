@@ -57,6 +57,12 @@ usethis::use_description()
 
 ### 2.1.1 Version
 
+Don't push after this
+
+``` r
+usethis::use_version()
+```
+
     <major>.<minor>.<patch>       (released version, e.g. 0.1.0)
     <major>.<minor>.<patch>.<dev> (dev version, e.g. 0.1.0.9000)
 
@@ -111,20 +117,26 @@ devtools::release()
 
 If not, then <https://r-hub.github.io/cransays/articles/dashboard.html>
 
-## 3.2 Commit CRAN-SUBMISSION
+## 3.2 Push (Don't Commit CRAN-SUBMISSION)
 
 ## 3.3 GitHub release
 
+``` r
+usethis::use_github_release()
+```
+
 - Release on Github with tag version v1.2.3
 - Copy NEWS to release notes.
-
-## 3.4 Bump dev version
-
 - Delete CRAN-SUBMISSION
-- Bump to version .9000 in DESCRIPTION
-- Add a heading in NEWS
-- Commit
+
+
+## 3.4 Bump dev version and Push
 
 ``` r
 usethis::use_dev_version()
 ```
+
+- Bump to version .9000 in DESCRIPTION
+- Add a heading in NEWS
+- Commit
+
